@@ -1,0 +1,17 @@
+<tool id="phobius" name="Phobius" version="0.0.1">
+    <description>A combined transmembrane topology and signal peptide predictors</description>
+    <command interpreter="bash">
+    run_phobius.sh ${fasta_file} ${output_file}
+    </command>
+    <stdio>
+        <!-- Anything other than zero is an error -->
+        <exit_code range="1:" />
+        <exit_code range=":-1" />
+    </stdio>
+    <inputs>
+        <param name="fasta_file" type="data" format="fasta" label="FASTA file of protein sequences"/>
+    </inputs>
+    <outputs>
+        <data name="output_file" format="tabular" label="SignalP $organism results" />
+    </outputs>
+</tool>
