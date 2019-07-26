@@ -12,6 +12,6 @@
         <param name="fasta_file" type="data" format="fasta" label="FASTA file of protein sequences"/>
     </inputs>
     <outputs>
-        <data name="output_file" format="tabular" label="SignalP $organism results" />
+        <data name="output_file" format="tabular" label="Phobius Results" />
     </outputs>
 </tool>
