@@ -1,7 +1,7 @@
 <tool id="phobius" name="Phobius" version="0.0.1">
     <description>A combined transmembrane topology and signal peptide predictors</description>
     <command interpreter="bash">
-    run_phobius.sh ${fasta_file} ${output_file}
+    run_phobius.sh ${fasta_file} ${format} ${output_file}
     </command>
     <stdio>
         <!-- Anything other than zero is an error -->
@@ -10,6 +10,10 @@
     </stdio>
     <inputs>
         <param name="fasta_file" type="data" format="fasta" label="FASTA file of protein sequences"/>
+         <param name="format" type="select" display="radio" label="Output Format">
+            <option value="short">Short</option>
+            <option value="long">Long</option>
+        </param>
     </inputs>
     <outputs>
         <data name="output_file" format="tabular" label="Phobius Results" />
